@@ -12,5 +12,6 @@
     "eslint": "^8.55.0",
     "serialport": "^12.0.0",
     "ts-node": "^10.9.1"
-  }
+  },
+  "type": "module"
 }

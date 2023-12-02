@@ -7,6 +7,10 @@
 		{
 			"name": "bookshelf-puzzle-arduino",
 			"path": "bookshelf-puzzle-arduino"
+		},
+		{
+			"name": "chess-puzzle-arduino",
+			"path": "chess-puzzle-arduino"
 		}
 	],
 	"settings": {}

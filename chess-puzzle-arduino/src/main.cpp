@@ -1,18 +1,21 @@
 #include <Arduino.h>
 
-// put function declarations here:
-int myFunction(int, int);
-
-void setup() {
-  // put your setup code here, to run once:
-  int result = myFunction(2, 3);
+void setup()
+{
+  Serial.begin(9600);
 }
 
-void loop() {
-  // put your main code here, to run repeatedly:
-}
+void loop()
+{
+  auto sensorValue = analogRead(A0);
 
-// put function definitions here:
-int myFunction(int x, int y) {
-  return x + y;
+  float voltage = sensorValue * (5.0 / 1023.0);
+
+  Serial.print("sensor value: ");
+  Serial.println(sensorValue);
+
+  Serial.print("voltage: ");
+  Serial.println(voltage);
+
+  delay(500);
 }

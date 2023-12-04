@@ -11,6 +11,10 @@
 		{
 			"name": "chess-puzzle-arduino",
 			"path": "chess-puzzle-arduino"
+		},
+		{
+			"name": "power-plant-arduino",
+			"path": "power-plant-arduino"
 		}
 	],
 	"settings": {}

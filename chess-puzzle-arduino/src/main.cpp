@@ -2,6 +2,8 @@
 
 const int LOCK_PIN = A5;
 void printMagnetSensor();
+void unlockDoor();
+void lockDoor();
 
 void setup()
 {
@@ -11,13 +13,11 @@ void setup()
 
 void loop()
 {
-  printMagnetSensor();
-  Serial.println("Setting HIGH");
-  digitalWrite(LOCK_PIN, HIGH);
+  delay(10000);
+  unlockDoor();
+
   delay(5000);
-  Serial.println("Setting LOW");
-  digitalWrite(LOCK_PIN, LOW);
-  delay(5000);
+  lockDoor();
 }
 
 void printMagnetSensor()
@@ -31,4 +31,16 @@ void printMagnetSensor()
 
   Serial.print("voltage: ");
   Serial.println(voltage);
+}
+
+void unlockDoor()
+{
+  Serial.println("Unlocking door");
+  digitalWrite(LOCK_PIN, HIGH);
+}
+
+void lockDoor()
+{
+  Serial.println("Locking door");
+  digitalWrite(LOCK_PIN, LOW);
 }

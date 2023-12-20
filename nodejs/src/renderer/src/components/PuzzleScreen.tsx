@@ -65,12 +65,14 @@ const Container = styled.div`
 		'power password'
 		'continue continue';
 	grid-template-columns: 1fr 1fr;
-	grid-template-rows: auto 2fr 1fr auto;
+	grid-template-rows: auto 1fr 150px auto;
 	gap: 8px;
 `;
 
 const GridCell = styled.div<{ area: string }>`
 	grid-area: ${({ area }) => area};
+	min-height: 0;
+	min-width: 0;
 `;
 
 const Title = styled.h1`

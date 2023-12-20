@@ -1,5 +1,7 @@
 #include <Arduino.h>
 
+const char * puzzleCompleteMessage = "power puzzle complete";
+
 void setup()
 {
   Serial.begin(9600);
@@ -7,7 +9,6 @@ void setup()
 
 void loop()
 {
-  auto value = analogRead(A0);
-  Serial.println(value);
-  delay(1000);
+  delay(5000);
+  Serial.println(puzzleCompleteMessage);
 }

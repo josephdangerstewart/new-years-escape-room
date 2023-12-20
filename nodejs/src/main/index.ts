@@ -5,6 +5,7 @@ import installExtension, {
 	REACT_DEVELOPER_TOOLS,
 } from 'electron-devtools-installer';
 import icon from '../../resources/icon.png?asset';
+import { listenForArduino } from './listenForArduino';
 
 function createWindow(): void {
 	// Create the browser window.
@@ -36,6 +37,12 @@ function createWindow(): void {
 	} else {
 		mainWindow.loadFile(join(__dirname, '../renderer/index.html'));
 	}
+
+	listenForArduino((message) => {
+		if (message === 'power puzzle complete') {
+			mainWindow.webContents.send('power-puzzle-solved');
+		}
+	});
 }
 
 // This method will be called when Electron has finished

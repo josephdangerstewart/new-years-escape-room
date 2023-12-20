@@ -1,6 +1,7 @@
 import { app, shell, BrowserWindow } from 'electron';
 import { join } from 'path';
 import { electronApp, optimizer, is } from '@electron-toolkit/utils';
+import installExtension, { REACT_DEVELOPER_TOOLS } from 'electron-devtools-installer';
 import icon from '../../resources/icon.png?asset';
 
 function createWindow(): void {
@@ -56,6 +57,10 @@ app.whenReady().then(() => {
 		// dock icon is clicked and there are no other windows open.
 		if (BrowserWindow.getAllWindows().length === 0) createWindow();
 	});
+
+	if (is.dev) {
+		installExtension(REACT_DEVELOPER_TOOLS);
+	}
 });
 
 // Quit when all windows are closed, except on macOS. There, it's common
